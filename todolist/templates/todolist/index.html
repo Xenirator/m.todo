@@ -1,0 +1,39 @@
+{% extends 'todolist/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-12 col-md-4">
+    <div class="card text-center">
+        <div class="card-body" >
+            <h2 class="card-title">Добавить запись</h2>
+            <div class="row text-center">
+                <div class="col">
+                    <form action="add_todo/" method="post" class="form">
+                        <div class="form-group">
+                            <input type="text" name="content" class="form-control mb-2" placeholder="Писать тут...">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-sm-12 col-md-7">
+            <ul class="list-group">
+                {% for todo_item in todo_items %}
+                <li class="list-group-item mb-2"><small>{{ todo_item.added_date }}:</small> <p class="mb-1">{{ todo_item.text }}</p>
+                     <div class="float-right">
+                         <form action="delete_todo/{{ todo_item.id }}/" action="post">
+                            <button type="submit" class="btn btn-sm btn-danger ">Удалить</button>
+                         </form>
+                     </div>
+                 </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock content %}
