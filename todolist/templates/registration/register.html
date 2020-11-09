@@ -1,0 +1,25 @@
+{% extends '../todolist/base.html' %}
+
+{% block title %}Create an account{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-12 col-md-4">
+    <div class="card text-center mt-5">
+        <div class="card-body">
+                    <form class='form-signin' action="." method="post">
+                        <h1 class="h2 mb-3 font-weight-normal">Создать аккаунт</h1>
+                        <div class=""></div>
+                                <input type="text" name="username" maxlength="150" required id="id_username" class="form-control" placeholder="Имя пользователя">
+                                <input type="text" name="first_name" maxlength="150" id="id_first_name" class="form-control" placeholder="Вас зовут">
+                                <input type="password" name="password" required id="id_password" class="form-control" placeholder="Пароль">
+                                <input type="password" name="password2" required id="id_password2" class="form-control" placeholder="Повторите пароль">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="vEh9OcOnqkG933VJIqPv4e5zqpc0UISwBgqUmzogAYg73gb8zkDizsCZNWLqAont">
+                                {% csrf_token %}
+                                <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Зарегистрироваться</button>
+                    </form>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
