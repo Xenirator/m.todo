@@ -15,9 +15,9 @@
     <div class="card text-center mt-5">
         <div class="card-body" >
                 <form class='form-signin' method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
                     <h1 class="h2 mb-3 font-weight-normal">Выполните вход</h1>
-                {% csrf_token %}
-                  <input type="hidden" name="csrfmiddlewaretoken" value="kj8nFzUDklw0nnW0UDlNmkIbSsjp4wcjU7vsDDjlSVmvGmA9FT3gadQQkz9A1GLS">
+
                           <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username" class="form-control" placeholder="Имя пользователя">
                           <input type="password" name="password" autocomplete="current-password" required id="id_password" class="form-control" placeholder="Пароль">
                     <a href="{% url 'register' %}"><input type="button" value="Регистрация" class="btn btn-success mt-3"/></a>
