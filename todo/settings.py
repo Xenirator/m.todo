@@ -132,5 +132,5 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
 LOGIN_REDIRECT_URL = 'home'
-
+LOGIN_URL = 'login'
 SITE_ID = 1

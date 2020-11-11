@@ -8,7 +8,7 @@ from .views import index, add_todo, delete_todo, login, logout, register
 
 urlpatterns = [
     path('', index, name='home'),
-    path('accounts/login/', login),
+    path('accounts/login/', login, name='login'),
     path('accounts/logout/', logout),
     path('accounts/register/', register, name='register'),
     path('add_todo/', add_todo),

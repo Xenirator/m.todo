@@ -27,7 +27,9 @@
                 <li class="list-group-item mb-2"><h5>{{ todo_item.author }}:</h5> <p class="mb-1">{{ todo_item.text }}</p><small>{{ todo_item.added_date }}</small>
                      <div class="float-right">
                          <form action="delete_todo/{{ todo_item.id }}/" action="post">
+                             {% if request.user == todo_item.author %}
                             <button type="submit" class="btn btn-sm btn-danger ">Удалить</button>
+                             {% endif %}
                          </form>
                      </div>
                  </li>

@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django import forms
 
+
+# Форма регистрации пользователей
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)

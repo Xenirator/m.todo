@@ -23,3 +23,12 @@ body {
 .footer_logo {
     text-decoration: none;
 }
+
+.vk {
+    text-decoration: none;
+    color: #fff;
+}
+
+.vk:hover {
+    text-decoration: none;
+}

@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 from .models import Todo
 from django.http import HttpResponseRedirect
 from datetime import datetime
 from .forms import UserRegistrationForm
-from django.contrib.auth.models import User
 # Create your views here.
 
 
+@login_required
 def index(request):
     todo_items = Todo.objects.all().order_by('-added_date')
     return render(request, 'todolist/index.html', {
